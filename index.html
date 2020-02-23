@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- HTML
+    HYPERTEXT 
+    Texto que contém links para outros documentos
+    
+    MARKUP 
+    Texto com marcações
+    <tags>
+    
+    LANGUAGE
+    Para me comunicar de certa maneira. Sintaxe especifica para a escrita.
+
+-->
+<html>
+
+<head>
+    <!-- São configurações da página -->
+    <title>
+        Doe vida! Doe sangue!
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+</head>
+
+<body>
+    <!-- Aqui vem todo o conteúdo visível para o usuário, 
+            dentro de certa página -->
+    <header>
+        <img 
+        class="logo"
+        src="/logo.png" 
+        alt="DOE">
+        <p>Até 3 vidas com uma doação</p>
+        <p>Mais de 38.000 doações são necessárias todos os dias</p>
+        <p>Apenas 1,9% da população brasileira doa sangue</p>
+        <button>Quero ajudar</button>
+    </header>
+
+    <!-- Input -->
+    <!-- Output -->
+    <section class="form hide">
+        <h2>Entre na lista de doadores</h2>
+        <form action="/" method="POST">
+            <input 
+                type="text"
+                name="name"
+                placeholder="Nome Completo"
+            >
+            <input
+                type="text"
+                name="email"
+                placeholder="Email"
+            >
+            <input 
+                type="text"
+                name="blood"
+                placeholder="Tipo Sanguíneo"
+            >
+            <button>Quero ajudar</button>
+        </form>
+    </section>
+    <main>
+        <h2>Últimos <span>doadores</span></h2>
+        <section class="donors">
+         
+            {% for donor in donors %}
+            <div class="donor">
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
+            </div>
+            {%endfor%}
+
+        </section>
+    </main>
+    <footer>Com ❤💛💚💙💜❣💕💞💓💗💖💘💝💟</footer>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
+
+
+
+
